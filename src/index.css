@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities{
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+   
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
