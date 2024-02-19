@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { auth } from "../utils/firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useDispatch, useSelector } from "react-redux";
-import { Navigate, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import { addUser, removeUser } from "../utils/userSlice";
 import { LOGO } from "../utils/constants";
 
@@ -29,6 +29,7 @@ const Header = () => {
             photoURL: photoURL,
           })
         );
+        
         navigate("/browse");
       } else {
         dispatch(removeUser());
@@ -36,7 +37,7 @@ const Header = () => {
       }
     });
     return () => unsubscribe();
-  }, []);
+  }, [dispatch, navigate]);
   return (
     <div className="absolute w-screen px-8 bg-gradient-to-b from-black py-2 z-50 flex justify-between">
       <img className="w-44 brightness-150 " src={LOGO} alt="logo" />

@@ -14,9 +14,7 @@ import { initializeApp } from "firebase/app";
         messagingSenderId: "155790174796",
         appId: "1:155790174796:web:093476c1388ba6c5e122e9",
         measurementId: "G-HZDMTPV02E"
-      };
-    
+      };   
       // Initialize Firebase
       const app = initializeApp(firebaseConfig);
-      const analytics = getAnalytics(app);
       export const auth = getAuth()

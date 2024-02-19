@@ -7,7 +7,6 @@ import {
   signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 import { BG, PROFILE_PICTURE } from "../utils/constants";
@@ -53,7 +52,6 @@ const Login = () => {
         password.current.value
       )
         .then((userCredential) => {
-          const user = userCredential.user;
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -62,7 +60,6 @@ const Login = () => {
         });
     }
   };
-
   const updateDetails = async (userCredential) => {
     const user = userCredential.user;
     await updateProfile(user, {
