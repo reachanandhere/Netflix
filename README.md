@@ -50,3 +50,6 @@
  - Netflix Gpt
     - Search bar
     - Movie Suggestions   
+
+
+# Access here : netflixclonegpx.netlify.app
