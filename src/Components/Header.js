@@ -50,10 +50,10 @@ const Header = () => {
     return () => unsubscribe();
   }, [dispatch, navigate]);
   return (
-    <div className="absolute w-screen px-8 bg-gradient-to-b from-black py-2 z-50 flex justify-between">
-      <img className="w-44 brightness-150 " src={LOGO} alt="logo" />
+    <div className="absolute w-screen px-8 bg-gradient-to-b from-black py-2 z-50 flex justify-between sm:flex-col sm:bg-black">
+      <img className="w-44 brightness-150 sm:mx-auto " src={LOGO} alt="logo" />
       {user && (
-        <div className="flex p-4">
+        <div className="flex p-4 sm:justify-center">
           {showGPTSearch && (
             <select
               onChange={handleLanguageChange}
