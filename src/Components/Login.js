@@ -23,7 +23,7 @@ const Login = () => {
   const password = useRef(null);
   const fullName = useRef(null);
   const handleButtonClick = () => {
-    if(fullName.current.value.length<5) return;
+    if(fullName?.current?.value?.length<5) return;
     const message = checkValidData(email.current.value, password.current.value);
     setErrorMessage(message);
     if (message) return;
