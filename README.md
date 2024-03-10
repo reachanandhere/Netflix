@@ -52,4 +52,4 @@
     - Movie Suggestions   
 
 
-# Access here : netflixclonegpx.netlify.app
+# Access here : ngpx.netlify.app
