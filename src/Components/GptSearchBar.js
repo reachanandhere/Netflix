@@ -10,15 +10,17 @@ const GptSearchBar = () => {
   const searchText = useRef(null);
   const dispatch = useDispatch();
 
-  const query =
-    "Act as a movie recommendation system and suggest some movies for the query " +
-    searchText?.current?.value +
-    ". Give me names of 5 Indian movies, comma separated like the example result given ahead. Example Result: Gadar, Don, Murder, Lagaan, Swades.";
-
+  
   const handleGPTSearch = async () => {
+
+   
+    const query =
+    "Act as a movie recommendation system for bollywood and hollywood movies and suggest some movies for the query " +
+    searchText?.current?.value +
+    ". Give me names of 5 Indian movies, comma separated like the example result given ahead. Example Result: Gadar, Don, Murder, Lagaan, Swades. Search for the specific genre, if horror is mentioned, suggest movies like bhool bhulaiya";
     const gptResult = await openai.chat.completions.create({
       messages: [{ role: "user", content: query }],
-      model: "gpt-3.5-turbo",
+      model: "gpt-3.5-turbo-0125",
     });
 
     if (!gptResult.choices) {
